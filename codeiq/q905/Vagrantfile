@@ -33,7 +33,6 @@ sudo chmod a+x /var/www/*.php
 sudo chown -R www-data:www-data /var/www/*
 sudo chown www-data /var/www
 sudo chmod g+w /var/www
-sudo rm /var/www/index.html
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
