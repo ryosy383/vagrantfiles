@@ -5,6 +5,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 $script = <<SCRIPT
+sudo apt-get update -y
+sudo apt-get install python-software-properties -y
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update -y
 sudo apt-get install language-pack-ja -y
