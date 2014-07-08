@@ -11,4 +11,7 @@ Vagrant( http://www.vagrantup.com/  )を使用して、
 http://localhost:10080/  
   
 3. ブラウザ上でScalaのコーディングと実行することが可能になります。  
-https://github.com/ryosy383/ScalaNotebook
+https://github.com/ryosy383/ScalaNotebook  
+  
+Windows版Vagrantで動作しない場合は「Vagrantfile_win」を「Vagrantfile」にリネームして使用してください。
+
