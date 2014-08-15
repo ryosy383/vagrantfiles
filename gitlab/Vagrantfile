@@ -21,13 +21,19 @@ sudo apt-get install postfix -y
 sudo dpkg -i gitlab_7.1.1-omnibus-1_amd64.deb
 sudo -e /etc/gitlab/gitlab.rb
 sudo gitlab-ctl reconfigure
+gitlab-ctl restart
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "trusty64"
+  config.vm.provider :virtualbox do |vb|
+    vb.name = "gitlab"
+    vb.customize ["modifyvm", :id, "--memory", 1024]
+  end
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/20140813/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.synced_folder "../gitlab", "/home/vagrant/gitalb",
     create: true, owner: "vagrant", group: "vagrant"
   config.vm.network "forwarded_port", guest: 80, host: 10080
   config.vm.provision "shell", inline: $script
 end
+
